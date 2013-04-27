@@ -48,6 +48,7 @@ public class MainSreenActivity extends GDActivity {
 				String pass = txtIdentif.getText().toString();
 				in.putExtra("identifient", idclient);
 				in.putExtra("pass", pass);
+				startActivity(in);
 			}
 		});
 	}

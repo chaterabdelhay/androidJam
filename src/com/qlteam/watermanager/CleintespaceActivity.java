@@ -26,9 +26,9 @@ public class CleintespaceActivity extends GDActivity {
 	// JSON Node names
 	private static final String TAG_SUCCESS = "success";
 	private static final String TAG_USER = "user";
-	private static final String TAG_ID = "id";
+//	private static final String TAG_ID = "cid";
 	private static final String TAG_IDENTF = "identifient";
-	private static final String TAG_PASS = "password";
+//	private static final String TAG_PASS = "password";
 	private ProgressDialog pDialog;
 	TextView txtName;
 	EditText txtpassword;
@@ -51,6 +51,9 @@ public class CleintespaceActivity extends GDActivity {
 		// getting product id (pid) from intent
 		identifient = i.getStringExtra("identifient");
 		password = i.getStringExtra("identifient");
+		// check your log for json response
+		Log.d("Single Product Details", identifient+"     "+password);
+
 		setActionBarContentView(R.layout.cleintespace_layout);
 		new GetUsers().execute();
 	}
@@ -67,7 +70,7 @@ public class CleintespaceActivity extends GDActivity {
 		protected void onPreExecute() {
 			super.onPreExecute();
 			pDialog = new ProgressDialog(CleintespaceActivity.this);
-			pDialog.setMessage("Loading product details. Please wait...");
+			pDialog.setMessage("Loading user details. Please wait...");
 			pDialog.setIndeterminate(false);
 			pDialog.setCancelable(true);
 			pDialog.show();
